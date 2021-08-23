@@ -1,10 +1,18 @@
 package iva.lesperance.api.tutorial.userApp;
 
-import org.springframework.stereotype.Repository;
-
+import java.util.List;
 import java.util.Optional;
 
-@Repository
 public interface UserAppRepository {
-    Optional<UserApp> findUserByEmail(String email);
+    Optional<UserApp> findUserByUsername(String username);
+    boolean saveUser(UserApp userApp);
+    boolean updateUser(int userID, UserApp userApp);
+    boolean deleteUser(String userId);
+    List<UserApp> getUsers();
+    boolean saveRole(UserAppRole role);
+    Optional<UserAppRole> findRole(String roleName);
+    boolean addRole2User(String username, String roleName);
+    List<UserAppRole> getRoles4User(String username);
+    boolean enableUserApp(String username);
+
 }

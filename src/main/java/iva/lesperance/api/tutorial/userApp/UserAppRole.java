@@ -1,6 +1,11 @@
 package iva.lesperance.api.tutorial.userApp;
 
-public enum UserAppRole {
-    USER,
-    ADMIN
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class UserAppRole {
+    private int roleID;
+    private String userRole;
 }
